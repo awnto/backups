@@ -4,7 +4,7 @@ set -eu
 
 task_name="$1"
 
-coverup_folder="coverup"
+coverup_folder="coverups"
 coverup_tmp="$coverup_folder/tmp"
 coverup_release="$coverup_folder/release"
 
@@ -29,6 +29,7 @@ if [ -z "${2+x}" ]; then
   echo " $task_name done over single file"
 else
   acrypter split $task_name.tar.xz.acrypt $2 $task_name.tar.xz.acrypt
+  rm $task_name.tar.xz.acrypt
 fi
 
 

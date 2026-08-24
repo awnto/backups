@@ -14,7 +14,8 @@ function a_download()
 	echo "Downloding $2"
 	while ! wget -c -q $1 -O $2
 	do
-		echo "  retry .."
+		echo "  retry 5sec .."
+		sleep 5
 	done
 
 }
